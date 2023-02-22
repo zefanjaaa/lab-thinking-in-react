@@ -7,16 +7,16 @@ import ProductTable from "./ProductTable";
 
 function ProductsPage(props) {
     const [products, setProducts] = useState(jsonData)
-    const [products2, setProducts2] = useState(jsonData)
     
-    function filterProduct(element) {
-    //    const spullen = [...products] 
+    
+    // function filterProduct(element) {
+    // //    const spullen = [...products] 
    
-    const filteredItems = products2.filter((ele) => {
-        return ele.name.toLowerCase().includes(element.toLowerCase())
-    })
-        setProducts2(filteredItems)
-    }
+    // const filteredItems = products2.filter((ele) => {
+    //     return ele.name.toLowerCase().includes(element.toLowerCase())
+    // })
+    //     setProducts2(filteredItems)
+    // }
   
   
 //     function searchResult(element) {
@@ -34,7 +34,7 @@ function ProductsPage(props) {
         <div>
             <h1>IronStore</h1>
  
-            <SearchBar filterProduct={filterProduct}/>
+            <SearchBar />
         
             <ProductTable itemList={products}/>
         </div>

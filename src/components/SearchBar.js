@@ -4,14 +4,25 @@ import jsonData from './../data.json'
 // return item.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase)
 
 
-function SearchBar(props, {data}) {
+function SearchBar(props) {
     const [inputValue, setInputvalue] = useState('')
-
-    let inputValueHandler = (e) => {
-        let inputted = e.target.value.toLowerCase();
-        setInputvalue(inputted)
+    // const [products2, setProducts2] = useState(jsonData)
+    // let inputValueHandler = (e) => {
+    //     let inputted = e.target.value.toLowerCase();
+    //     setInputvalue(inputted)
        
+    // }
+    const inputValueHandler = (event) => {
+        setInputvalue(event.target.value)
     }
+   
+        //    const spullen = [...products] 
+       
+        const filteredItems = jsonData.filter((ele) => {
+            return ele.name.toLowerCase().includes(inputValue.toLowerCase())
+        })
+            // setProducts2(filteredItems)
+        
 
   
    
@@ -33,11 +44,11 @@ function SearchBar(props, {data}) {
         <div>
             <h3> Searchbar goes here</h3>
     <input type='text' onChange={ inputValueHandler} value={inputValue} />
-            {/* <ul>
-            {filteredItems.map((item) => (
-                <li key={item.id}>{item.name}</li>
+            <ul>
+            {filteredItems.map((item,index) => (
+                <li key={item.id}>{item.name} </li>
             ))}
-            </ul> */}
+            </ul>
            
        </div>
 )}

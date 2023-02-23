@@ -12,6 +12,7 @@ function ProductTable(props) {
                 <tr>
                     <th>Name</th>
                     <th>Price</th>
+                    <th>Category</th>
                 </tr>
             {props.itemList.map(item => {
                 return (

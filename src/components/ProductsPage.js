@@ -10,11 +10,17 @@ function ProductsPage(props) {
     const [items, setItems] = useState()
     
     function searchThroughItems(waarde) {
-        const filteredItems = products.filter((ele) => {
-            return ele.name.toLowerCase().includes(waarde.toLowerCase())
-            
-        })
-        setItems(filteredItems)
+        if (!waarde) {
+    setProducts(jsonData)
+        } else {
+            const filteredItems = jsonData.filter((ele) => {
+                return ele.name.toLowerCase().includes(waarde.toLowerCase())
+                
+            })
+            setProducts(filteredItems)
+}
+
+    
      
     }
 

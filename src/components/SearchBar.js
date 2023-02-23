@@ -13,10 +13,7 @@ function SearchBar(props) {
        
     // }
 
-    function inputValueHandler(e) {
-        setInputvalue(e.target.value)
-       
-    }
+    
     // const inputValueHandler = (event) => {
     //     setInputvalue(event.target.value)
     // }
@@ -46,7 +43,7 @@ function SearchBar(props) {
     return (
         <div>
             <h3> Searchbar goes here</h3>
-    <input type='text' onChange={ inputValueHandler} value={inputValue} />
+    <input type='text' onChange={ (event)=>props.searchThroughItems(event.target.value)} />
             {/* <ul>
             {filteredItems.map((item,index) => (
                 <li key={item.id}>{item.name} </li>

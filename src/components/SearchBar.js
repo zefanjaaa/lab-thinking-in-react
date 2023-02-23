@@ -12,15 +12,18 @@ function SearchBar(props) {
     //     setInputvalue(inputted)
        
     // }
-    const inputValueHandler = (event) => {
-        setInputvalue(event.target.value)
+
+    function inputValueHandler(e) {
+        setInputvalue(e.target.value)
+       
     }
+    // const inputValueHandler = (event) => {
+    //     setInputvalue(event.target.value)
+    // }
    
         //    const spullen = [...products] 
        
-        const filteredItems = jsonData.filter((ele) => {
-            return ele.name.toLowerCase().includes(inputValue.toLowerCase())
-        })
+      
             // setProducts2(filteredItems)
         
 
@@ -44,12 +47,12 @@ function SearchBar(props) {
         <div>
             <h3> Searchbar goes here</h3>
     <input type='text' onChange={ inputValueHandler} value={inputValue} />
-            <ul>
+            {/* <ul>
             {filteredItems.map((item,index) => (
                 <li key={item.id}>{item.name} </li>
             ))}
             </ul>
-           
+            */}
        </div>
 )}
 
